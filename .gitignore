@@ -1,0 +1,7 @@
+.DS_Store
+*.pbxuser
+*.perspectivev3
+*.app
+*.log*
+
+loggerTest/build

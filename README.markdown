@@ -29,12 +29,13 @@ If you're using OS X, open the XCode project in ofxLogger/loggerTest/ and hit "B
 Adding ofxLogger to an Existing Project
 ---------------------------------------
 
-If you want to add ofxKinect to another project, you need to make sure you include the src folders:
+If you want to add ofxLogger to another project, you need to make sure you include the src folders:
 <pre>
 openFrameworks/addons/ofxLogger/src
 </pre>
 
 For XCode:
+
 * create a new group "ofxLogger"
 * drag these directories from ofxLogger into this new group: ofxLogger/src
 
