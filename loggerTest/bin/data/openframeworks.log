@@ -1,0 +1,23 @@
+# Log file created/rotated Sunday, 10 Apr 11 08:03:30 GMT
+2011-04-10 04:03:30.046 0 1 of: a log
+2011-04-10 04:03:30.046 0 1 of.topic1: an error
+2011-04-10 04:03:30.046 0 1 OF_ERROR: of.topic2: an error
+2011-04-10 04:03:30.046 0 1 OF_ERROR: of.topic1: an error
+2011-04-10 04:03:30.046 0 1 log file: ../../../data/openframeworks.log
+0 1 OF_WARNING: ... a new frame
+1 200 OF_WARNING: ... a new frame
+2 400 OF_WARNING: ... a new frame
+3 745 OF_WARNING: ... a new frame
+4 945 OF_WARNING: ... a new frame
+5 1145 OF_WARNING: ... a new frame
+6 1345 OF_WARNING: ... a new frame
+7 1545 OF_WARNING: ... a new frame
+8 1745 OF_WARNING: ... a new frame
+9 1946 OF_WARNING: ... a new frame
+10 2145 OF_WARNING: ... a new frame
+11 2345 OF_WARNING: ... a new frame
+12 2545 OF_WARNING: ... a new frame
+13 2745 OF_WARNING: ... a new frame
+14 2945 OF_WARNING: ... a new frame
+15 3145 OF_WARNING: ... a new frame
+16 3345 OF_WARNING: ... a new frame
