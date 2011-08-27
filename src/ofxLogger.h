@@ -4,6 +4,8 @@
 
 #include "ofxLog.h"
 #include "ofxBitmapString.h"
+#include "ofxLoggerEvent.h"
+#include "ofxLoggerDisplay.h"
 
 #include <Poco/AutoPtr.h>
 #include <Poco/Logger.h>
@@ -12,6 +14,7 @@
 #include <Poco/SplitterChannel.h>
 
 //#define OF_DEFAULT_LOG_LEVEL  OF_LOG_NOTICE
+extern ofEvent<ofxLoggerEvent> ofxLoggerEventDispatcher;
 
 //------------------------------------------------------------------------------
 /// \class ofxLogger
@@ -36,6 +39,11 @@ class ofxLogger
 	
 		/// singleton object access, creates a new object on the first call
 		static ofxLogger& instance();
+		
+		template <typename ArgumentsType, class ListenerClass>
+		static void addListener(ListenerClass  * listener, void (ListenerClass::*listenerMethod)(ArgumentsType&)){
+			ofAddListener(ofxLoggerEventDispatcher, listener, listenerMethod);
+		}
 		
 		/// \section Log
 		/// Log the a message as a full line at a specifed log level. Prints a

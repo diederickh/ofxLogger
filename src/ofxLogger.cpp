@@ -10,6 +10,8 @@ const string ofxLogger::s_dateFormat = "%Y-%m-%d %H:%M:%S.%i";
 const string ofxLogger::s_timeFormat = "%H:%M:%S.%i";
 const string ofxLogger::s_dateAndTimeFormat = "%Y-%m-%d %H:%M:%S.%i";
 
+ofEvent<ofxLoggerEvent> ofxLoggerEventDispatcher;
+
 //
 // Useful references:
 //  - http://pocoproject.org/docs/Poco.Logger.html
@@ -329,7 +331,11 @@ bool ofxLogger::usingHeaderMillis()
 void ofxLogger::_log(ofLogLevel logLevel, const string& message, Poco::Logger* theLogger)
 {
 	string timestamp;
-
+	
+	// dispatch a simple logger event.
+	ofxLoggerEvent ev(message, logLevel);
+	ofNotifyEvent(ofxLoggerEventDispatcher, ev);
+	
 	// build the header
 	if(bHeader)
 	{
