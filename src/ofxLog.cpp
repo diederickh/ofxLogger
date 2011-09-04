@@ -21,6 +21,18 @@ ofLogLevel ofxLog::getLevel(){
 	return (ofLogLevel) ofxLogger::instance().getLevel();
 }
 
+
+// Helper if you just want to quickly log to a file with
+// file rotation enabled for each 1mb.
+void ofxLog::setupUsingDefaultSettingsForFileRotation() {
+	ofxLog::enableFileRotationSize(1024);
+	ofxLog::enableFile();
+	ofxLog::enableHeader();
+	ofxLog::enableHeaderFrameNum();
+	ofxLog::setLevel(OF_LOG_VERBOSE);
+}
+
+
 //----------------------------------------------------------------------------------------
 void ofxLog::enableConsole()	{ofxLogger::instance().enableConsole();}
 void ofxLog::disableConsole()	{ofxLogger::instance().disableConsole();}

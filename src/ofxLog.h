@@ -87,6 +87,7 @@ class ofxLog
 		static void setFilePath(const string& file);
 		static string getFilePath();
 		
+		static void setupUsingDefaultSettingsForFileRotation();
 		static void enableFileRotationMins(unsigned int minutes);
 		static void enableFileRotationHours(unsigned int hours);
 		static void enableFileRotationDays(unsigned int days);
