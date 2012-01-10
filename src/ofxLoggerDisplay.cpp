@@ -2,6 +2,7 @@
 #include "ofxLogger.h"
 ofxLoggerDisplay::ofxLoggerDisplay()
 :num_messages_to_show(0)
+,locked(false)
 {
 }
 
@@ -49,6 +50,7 @@ void ofxLoggerDisplay::setup(int numToShow) {
 */
 
 void ofxLoggerDisplay::draw(float x, float y) {
+	locked = true;
 	ofSetColor(33,33,33);
 	ofRect(0,0, ofGetWidth(), ofGetHeight());
 
@@ -68,9 +70,13 @@ void ofxLoggerDisplay::draw(float x, float y) {
 		h+= 13;
 		++it;
 	}
+	locked = false;
 }
 
 void ofxLoggerDisplay::onNewLog(ofxLoggerEvent& ev) {
+	if(locked) {
+		return;
+	}
 	messages.push_back(ev);
 	if(messages.size() > num_messages_to_show) {
 		messages.erase(messages.begin());
